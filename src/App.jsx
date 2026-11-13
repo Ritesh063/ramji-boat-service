@@ -5,6 +5,7 @@ import FleetSection from './components/FleetSection';
 import BookingCalculator from './components/BookingCalculator';
 import ToursSection from './components/ToursSection';
 import GhatsExperience from './components/GhatsExperience';
+import PhotoGallery from './components/PhotoGallery';
 import WhyUsSection from './components/WhyUsSection';
 import ReviewsSection from './components/ReviewsSection';
 import FaqSection from './components/FaqSection';
@@ -28,7 +29,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col antialiased pb-24 sm:pb-0 overflow-x-hidden w-full relative">
+    <div className="min-h-screen bg-slate-950 text-slate-800 flex flex-col antialiased pb-24 sm:pb-0 overflow-x-hidden w-full relative">
       
       {/* Navigation */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
@@ -43,8 +44,8 @@ export default function App() {
         <FleetSection onSelectBoat={(boat) => handleOpenBooking(boat)} />
 
         {/* On-Page Booking & Calculator Section */}
-        <section id="booking" className="py-14 sm:py-20 bg-gradient-to-b from-white to-amber-50/40">
-          <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <section id="booking" className="py-16 sm:py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white relative">
+          <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
             <BookingCalculator />
           </div>
         </section>
@@ -54,6 +55,9 @@ export default function App() {
 
         {/* 84 Ghats Guide & Samneghat Base */}
         <GhatsExperience />
+
+        {/* Visual Photo Gallery of Moments on Ganga */}
+        <PhotoGallery onOpenBooking={() => handleOpenBooking()} />
 
         {/* Why Choose Ramji Boat Services */}
         <WhyUsSection />
@@ -78,11 +82,11 @@ export default function App() {
       {/* Global Booking Modal */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 bg-slate-950/75 backdrop-blur-sm animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md animate-fadeIn"
           onClick={handleCloseBooking}
         >
           <div 
-            className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-scaleUp max-h-[92vh] flex flex-col"
+            className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-scaleUp max-h-[92vh] flex flex-col border border-amber-400"
             onClick={(e) => e.stopPropagation()}
           >
             <button

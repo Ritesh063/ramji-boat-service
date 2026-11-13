@@ -22,6 +22,8 @@
     position: relative;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    background-color: #0b0f19;
+    color: #1e293b;
   }
 
   h1, h2, h3, .font-serif-kashi {
@@ -33,34 +35,91 @@
   }
 }
 
-/* Custom glowing effects and spiritual ambiance */
+/* Luxury Gold & Spiritual Gradients */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FF9900 0%, #D4AF37 50%, #FF6600 100%);
+  background: linear-gradient(135deg, #FDE68A 0%, #D4AF37 40%, #B45309 80%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.bg-kashi-gradient {
-  background: linear-gradient(135deg, #1e1b18 0%, #2d1810 50%, #152238 100%);
+.text-sunset-gradient {
+  background: linear-gradient(135deg, #FFedd5 0%, #FB923C 50%, #EA580C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.shadow-spiritual {
-  box-shadow: 0 10px 30px -10px rgba(255, 119, 34, 0.25);
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F59E0B 50%, #B45309 100%);
+}
+
+.bg-sunset-rich {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 50%, #9A3412 100%);
+}
+
+.bg-kashi-dark {
+  background: radial-gradient(circle at top center, #1e1b2e 0%, #0d0f17 60%, #06070a 100%);
+}
+
+.bg-kashi-card {
+  background: linear-gradient(180deg, rgba(30, 27, 46, 0.75) 0%, rgba(13, 15, 23, 0.9) 100%);
 }
 
 .glass-nav {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(11, 15, 25, 0.88);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.glass-dark {
+.glass-card-light {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(20, 20, 25, 0.88);
+  background: rgba(255, 255, 255, 0.95);
 }
 
-/* Safe area padding utilities for modern smartphones (iPhone dynamic island, home bar) */
+.border-gold-subtle {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.shadow-gold-glow {
+  box-shadow: 0 0 35px -5px rgba(212, 175, 55, 0.25);
+}
+
+.shadow-orange-glow {
+  box-shadow: 0 10px 30px -10px rgba(234, 88, 12, 0.35);
+}
+
+/* Floating Diya Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Shimmer animation for badges and highlights */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Safe area padding utilities for modern smartphones */
 .pb-safe {
   padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
 }
@@ -69,9 +128,17 @@
   padding-top: env(safe-area-inset-top, 0px);
 }
 
-/* Touch-optimized button minimum sizes */
-@media (max-width: 640px) {
-  button, a {
-    min-height: 40px;
-  }
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
 }
