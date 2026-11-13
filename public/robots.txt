@@ -1,0 +1,7 @@
+# Robots.txt for Ramji Boat Services Varanasi
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+Sitemap: https://ramjiboatservices.web.app/sitemap.xml

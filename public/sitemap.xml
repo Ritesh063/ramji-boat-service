@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ramjiboatservices.web.app/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ramjiboatservices.web.app/images/ramji-boat-banner.jpg</image:loc>
+      <image:title>Ramji Boat Services Varanasi Cruise on Ganga River</image:title>
+      <image:caption>Beautiful boat ride in Varanasi with Ramji Boat Services - Big Boat and Small Boat</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ramjiboatservices.web.app/#fleet</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ramjiboatservices.web.app/#tours</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ramjiboatservices.web.app/#booking</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ramjiboatservices.web.app/#contact</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
