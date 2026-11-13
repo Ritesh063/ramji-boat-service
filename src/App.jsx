@@ -28,13 +28,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col antialiased pb-16 sm:pb-0">
+    <div className="min-h-screen bg-slate-50 flex flex-col antialiased pb-24 sm:pb-0 overflow-x-hidden w-full relative">
       
       {/* Navigation */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 w-full">
         
         {/* Hero Section with uploaded reference image banner details */}
         <Hero onOpenBooking={() => handleOpenBooking()} />
@@ -43,8 +43,8 @@ export default function App() {
         <FleetSection onSelectBoat={(boat) => handleOpenBooking(boat)} />
 
         {/* On-Page Booking & Calculator Section */}
-        <section id="booking" className="py-20 bg-gradient-to-b from-white to-amber-50/40">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="booking" className="py-14 sm:py-20 bg-gradient-to-b from-white to-amber-50/40">
+          <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
             <BookingCalculator />
           </div>
         </section>
@@ -77,11 +77,17 @@ export default function App() {
 
       {/* Global Booking Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fadeIn">
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-scaleUp">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 bg-slate-950/75 backdrop-blur-sm animate-fadeIn"
+          onClick={handleCloseBooking}
+        >
+          <div 
+            className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-scaleUp max-h-[92vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={handleCloseBooking}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition shadow-sm"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />

@@ -270,3 +270,4 @@ export const FAQS = [
     a: "Yes! Our Big Boat (50-60 persons) is equipped with a sound system and ample open deck space, making it perfect for devotional Bhajan Sandhyas, family milestone celebrations, and group gatherings."
   }
 ];
+

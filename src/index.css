@@ -3,9 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-top: env(safe-area-inset-top, 0px);
+  }
+
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   h1, h2, h3, .font-serif-kashi {
@@ -28,10 +44,6 @@
   background: linear-gradient(135deg, #1e1b18 0%, #2d1810 50%, #152238 100%);
 }
 
-.bg-sunset-gradient {
-  background: linear-gradient(180deg, rgba(230, 81, 0, 0.05) 0%, rgba(255, 153, 0, 0.02) 100%);
-}
-
 .shadow-spiritual {
   box-shadow: 0 10px 30px -10px rgba(255, 119, 34, 0.25);
 }
@@ -39,11 +51,27 @@
 .glass-nav {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .glass-dark {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(20, 20, 25, 0.85);
+  background-color: rgba(20, 20, 25, 0.88);
+}
+
+/* Safe area padding utilities for modern smartphones (iPhone dynamic island, home bar) */
+.pb-safe {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Touch-optimized button minimum sizes */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 40px;
+  }
 }
