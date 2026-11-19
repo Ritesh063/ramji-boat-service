@@ -1,6 +1,44 @@
 import React, { useState } from 'react';
 import { Camera, Sparkles, Eye, ArrowRight } from 'lucide-react';
-import { GALLERY_IMAGES } from '../data/boatData';
+
+const LOCAL_GALLERY_IMAGES = [
+  {
+    url: "/images/ramji-boat-banner.jpg",
+    title: "Ramji Boat Cruise on River Ganga",
+    category: "Our Fleet",
+    caption: "Spacious cruise gliding along the historic ghats of Varanasi"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=1200&q=80",
+    title: "Dashashwamedh Evening Maha Aarti",
+    category: "Ganga Aarti",
+    caption: "Front-row boat views of sacred fire rituals and bell chanting"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=80",
+    title: "Subah-e-Banaras Sunrise",
+    category: "Sunrise Tour",
+    caption: "Divine golden morning over the Ganges with sacred rituals"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?auto=format&fit=crop&w=1200&q=80",
+    title: "Historic Ghat Palaces",
+    category: "84 Ghats",
+    caption: "Royal heritage fortresses standing timeless above the water"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=1200&q=80",
+    title: "Sacred Temple Riverbanks",
+    category: "84 Ghats",
+    caption: "Centuries of Hindu devotion and spiritual architecture"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    title: "Namo Ghat Sculptures & Sunset",
+    category: "84 Ghats",
+    caption: "Modern Varanasi welcoming pilgrims from around the world"
+  }
+];
 
 export default function PhotoGallery({ onOpenBooking }) {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -8,8 +46,8 @@ export default function PhotoGallery({ onOpenBooking }) {
   const categories = ['All', 'Ganga Aarti', 'Sunrise Tour', 'Our Fleet', '84 Ghats'];
 
   const filteredImages = activeCategory === 'All'
-    ? GALLERY_IMAGES
-    : GALLERY_IMAGES.filter(img => img.category === activeCategory);
+    ? LOCAL_GALLERY_IMAGES
+    : LOCAL_GALLERY_IMAGES.filter(img => img.category === activeCategory);
 
   return (
     <section id="gallery" className="py-16 sm:py-24 bg-slate-950 text-white relative overflow-hidden">

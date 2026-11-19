@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Calendar, Users, Shield, Star, MapPin, Sparkles, Anchor, Compass, Ship, Flame, Play, Pause, Film } from 'lucide-react';
-import { BUSINESS_INFO, STATS_HIGHLIGHTS } from '../data/boatData';
+import { BUSINESS_INFO } from '../data/boatData';
+
+const STATS_HIGHLIGHTS = [
+  { label: "Big Boat Capacity", value: "50–60", sub: "Double Deck Vessel" },
+  { label: "Small Boat Capacity", value: "20–25", sub: "Intimate Family Boat" },
+  { label: "Historic Ghats", value: "84 Ghats", sub: "Complete Sightseeing" },
+  { label: "Guest Satisfaction", value: "4.9 ★", sub: "385+ Verified Reviews" },
+];
 
 export default function Hero({ onOpenBooking }) {
   const [isVideoMode, setIsVideoMode] = useState(false);
@@ -42,39 +49,6 @@ export default function Hero({ onOpenBooking }) {
       <div className="absolute top-1/4 -right-20 w-[550px] h-[550px] rounded-full bg-amber-500/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -left-20 w-[500px] h-[500px] rounded-full bg-orange-600/15 blur-[140px] pointer-events-none" />
 
-      {/* =========================================================================
-          AUTHENTIC VARANASI GHATS & BOAT BACKGROUND (Photo + Video Layers)
-          ========================================================================= */}
-
-      {/* 1. Cinematic Video Background (When active) */}
-      {isVideoMode && (
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <iframe
-            className="w-full h-full object-cover scale-[1.35] filter brightness-[0.45] contrast-[1.1] pointer-events-none"
-            src="https://www.youtube.com/embed/UffBYVuUaTI?autoplay=1&mute=1&controls=0&loop=1&playlist=UffBYVuUaTI&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
-            title="Varanasi Ghats Boat Ride Background Video"
-            allow="autoplay; encrypted-media"
-          />
-        </div>
-      )}
-
-      {/* 2. Authentic High-Res Varanasi Ghats & Boat Photography Background */}
-      <div
-        className={`absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${isVideoMode ? 'opacity-30' : 'opacity-40'
-          }`}
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=2000&q=85')`,
-        }}
-      />
-
-      {/* 3. Deep Atmospheric Spiritual Scrim / Gradient Overlays for High Contrast & Legibility */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/75" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80" />
-
-      {/* 4. Golden River Lights Glow Orbs */}
-      <div className="absolute top-1/4 -right-20 w-[550px] h-[550px] rounded-full bg-amber-500/15 blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-20 w-[500px] h-[500px] rounded-full bg-orange-600/15 blur-[140px] pointer-events-none" />
-
       {/* Decorative Golden Arch Line */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
@@ -105,10 +79,10 @@ export default function Hero({ onOpenBooking }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
+          
           {/* Left Column: Brand details, Capacity & Direct Booking CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-
+            
             {/* Main Header / Brand */}
             <div>
               <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
@@ -136,7 +110,7 @@ export default function Hero({ onOpenBooking }) {
 
             {/* Featured Boat Capacity Highlights (Direct from reference image) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-
+              
               {/* Big Boat Card */}
               <div className="relative p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 to-amber-950/60 border-2 border-amber-500/50 shadow-gold-glow text-left hover:border-amber-400 transition group backdrop-blur-md">
                 <div className="flex items-center justify-between">
@@ -182,8 +156,8 @@ export default function Hero({ onOpenBooking }) {
                   <div className="text-[11px] sm:text-xs text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <Phone className="w-3.5 h-3.5 text-emerald-400" /> Direct Booking Hotline & WhatsApp
                   </div>
-                  <a
-                    href={`tel:${BUSINESS_INFO.phone}`}
+                  <a 
+                    href={`tel:${BUSINESS_INFO.phone}`} 
                     className="text-2xl sm:text-4xl font-black text-white hover:text-amber-300 transition tracking-wide block mt-1"
                   >
                     {BUSINESS_INFO.phone}
@@ -245,13 +219,13 @@ export default function Hero({ onOpenBooking }) {
           {/* Right Column: Visual Reference Showcase Card (User's Flyer in Luxury Gold Theme) */}
           <div className="lg:col-span-5 w-full">
             <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-
+              
               {/* Outer Golden Halo Glow */}
               <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-400 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-1000"></div>
 
               {/* Card Container styled faithful to user's uploaded banner */}
               <div className="relative rounded-3xl bg-slate-950 shadow-2xl overflow-hidden border-2 border-amber-500/50">
-
+                
                 {/* Reference Hero Banner Image */}
                 <div className="relative aspect-[4/3] max-h-[360px] overflow-hidden bg-slate-900 group">
                   <img
@@ -261,13 +235,13 @@ export default function Hero({ onOpenBooking }) {
                     loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/30" />
-
+                  
                   {/* Floating badges on image */}
                   <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-amber-300 shadow-md flex items-center border border-amber-500/40">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
                     Live Booking Active
                   </div>
-
+                  
                   <div className="absolute bottom-3 left-4 right-4 text-white">
                     <p className="text-[10px] sm:text-xs uppercase tracking-widest text-amber-300 font-bold">Holy River Ganga • Kashi</p>
                     <h3 className="text-lg sm:text-xl font-bold font-serif leading-snug">Grand Cruise & Traditional Boats</h3>
@@ -276,7 +250,7 @@ export default function Hero({ onOpenBooking }) {
 
                 {/* Card Content replicating the flyer style */}
                 <div className="p-5 sm:p-6 space-y-4 bg-gradient-to-b from-slate-950 to-slate-900">
-
+                  
                   <div className="text-center pb-2 border-b border-amber-500/20">
                     <div className="inline-flex items-center gap-1.5 text-gold-gradient font-black text-sm uppercase tracking-widest font-brand">
                       <span>🚤</span> RAMJI BOAT SERVICES
@@ -348,7 +322,7 @@ export default function Hero({ onOpenBooking }) {
         {/* Stats Highlights Banner Bar */}
         <div className="mt-14 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {STATS_HIGHLIGHTS.map((stat, i) => (
-            <div
+            <div 
               key={i}
               className="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-amber-500/20 backdrop-blur-md text-center hover:border-amber-400/50 transition shadow-lg"
             >

@@ -11,3 +11,4 @@ echo Launching preview server...
 echo.
 call npm run preview
 pause
+
