@@ -1,12 +1,46 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Calendar, Users, Shield, Star, MapPin, Sparkles, Anchor, Compass, Ship, Flame, Play, Pause, Film } from 'lucide-react';
-// import { BUSINESS_INFO, STATS_HIGHLIGHTS } from '../data/boatData';
+import { BUSINESS_INFO, STATS_HIGHLIGHTS } from '../data/boatData';
 
 export default function Hero({ onOpenBooking }) {
   const [isVideoMode, setIsVideoMode] = useState(false);
 
   return (
     <section id="home" className="relative overflow-hidden bg-slate-950 text-white pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-28 min-h-[90vh] flex items-center">
+      
+      {/* =========================================================================
+          AUTHENTIC VARANASI GHATS & BOAT BACKGROUND (Photo + Video Layers)
+          ========================================================================= */}
+      
+      {/* 1. Cinematic Video Background (When active) */}
+      {isVideoMode && (
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <iframe
+            className="w-full h-full object-cover scale-[1.35] filter brightness-[0.45] contrast-[1.1] pointer-events-none"
+            src="https://www.youtube.com/embed/UffBYVuUaTI?autoplay=1&mute=1&controls=0&loop=1&playlist=UffBYVuUaTI&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
+            title="Varanasi Ghats Boat Ride Background Video"
+            allow="autoplay; encrypted-media"
+          />
+        </div>
+      )}
+
+      {/* 2. Authentic High-Res Varanasi Ghats & Boat Photography Background */}
+      <div 
+        className={`absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+          isVideoMode ? 'opacity-30' : 'opacity-40'
+        }`}
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=2000&q=85')`,
+        }}
+      />
+
+      {/* 3. Deep Atmospheric Spiritual Scrim / Gradient Overlays for High Contrast & Legibility */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/75" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80" />
+      
+      {/* 4. Golden River Lights Glow Orbs */}
+      <div className="absolute top-1/4 -right-20 w-[550px] h-[550px] rounded-full bg-amber-500/15 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 -left-20 w-[500px] h-[500px] rounded-full bg-orange-600/15 blur-[140px] pointer-events-none" />
 
       {/* =========================================================================
           AUTHENTIC VARANASI GHATS & BOAT BACKGROUND (Photo + Video Layers)
@@ -45,10 +79,10 @@ export default function Hero({ onOpenBooking }) {
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10 w-full">
-
+        
         {/* Top Ticker & Video Ambient Toggle Row */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-
+          
           {/* Spiritual Live Ticker */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/80 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-semibold tracking-wide shadow-gold-glow backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
@@ -95,8 +129,8 @@ export default function Hero({ onOpenBooking }) {
             </div>
 
             <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal drop-shadow">
-              Experience the divine magic of Kashi from the sacred lap of Mother Ganga.
-              Specializing in <strong>Subah-e-Banaras Sunrise tours</strong>, world-famous <strong>Dashashwamedh Ganga Aarti VIP front-row viewing</strong>,
+              Experience the divine magic of Kashi from the sacred lap of Mother Ganga. 
+              Specializing in <strong>Subah-e-Banaras Sunrise tours</strong>, world-famous <strong>Dashashwamedh Ganga Aarti VIP front-row viewing</strong>, 
               and complete 84 Ghats heritage journeys with experienced local Naviks.
             </p>
 
