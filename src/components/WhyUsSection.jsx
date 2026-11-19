@@ -14,13 +14,13 @@ const iconMap = {
 export default function WhyUsSection() {
   return (
     <section id="why-us" className="py-16 sm:py-24 bg-kashi-dark text-white relative overflow-hidden border-t border-b border-amber-500/20">
-      
+
       {/* Decorative background radial lights */}
       <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute -bottom-40 left-0 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 border border-amber-500/30">

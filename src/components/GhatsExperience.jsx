@@ -6,7 +6,7 @@ export default function GhatsExperience() {
   return (
     <section id="ghats" className="py-16 sm:py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5">
@@ -38,7 +38,7 @@ export default function GhatsExperience() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                  
+
                   {/* Significance Pill */}
                   <div className="absolute top-3 left-3">
                     <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-300 text-[10px] sm:text-xs font-bold border border-amber-400/30">

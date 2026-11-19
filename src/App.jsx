@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import FleetSection from './components/FleetSection';
 import BookingCalculator from './components/BookingCalculator';
 import ToursSection from './components/ToursSection';
+import VaranasiVideoExperience from './components/VaranasiVideoExperience';
 import GhatsExperience from './components/GhatsExperience';
 import PhotoGallery from './components/PhotoGallery';
 import WhyUsSection from './components/WhyUsSection';
@@ -37,21 +38,17 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="flex-1 w-full">
         
-        {/* Hero Section with uploaded reference image banner details */}
+        {/* Hero Section with authentic Varanasi Ghats & boat background (Photo + Video mode) */}
         <Hero onOpenBooking={() => handleOpenBooking()} />
 
-        {/* Fleet Section: Big Boat (50-60) & Small Boat (20-25) */}
+        {/* Fleet Section: Big Boat (50-60) & Small Boat (20-25) with riverfront background */}
         <FleetSection onSelectBoat={(boat) => handleOpenBooking(boat)} />
-
-        {/* On-Page Booking & Calculator Section */}
-        <section id="booking" className="py-16 sm:py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white relative">
-          <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
-            <BookingCalculator />
-          </div>
-        </section>
 
         {/* Tours & Experiences (Subah-e-Banaras, Ganga Aarti, Dev Deepawali) */}
         <ToursSection onSelectTour={() => handleOpenBooking()} />
+
+        {/* Live Varanasi Ghats & Boat Video Experience Reel */}
+        <VaranasiVideoExperience onOpenBooking={() => handleOpenBooking()} />
 
         {/* 84 Ghats Guide & Samneghat Base */}
         <GhatsExperience />
@@ -61,6 +58,13 @@ export default function App() {
 
         {/* Why Choose Ramji Boat Services */}
         <WhyUsSection />
+
+        {/* On-Page Booking & Calculator Section */}
+        <section id="booking" className="py-16 sm:py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white relative">
+          <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
+            <BookingCalculator />
+          </div>
+        </section>
 
         {/* Customer Reviews & Ratings */}
         <ReviewsSection />
